@@ -29,7 +29,7 @@ public class BookController {
     @PostMapping("/books/search")
     public List<Book> searchByKeyword(@RequestBody Map<String, String> body) {
         String keyWord = body.get("text");
-        return repository.findByTitleContainingOrDescriptionContaining(keyWord);
+        return repository.findByTitleContainingOrDescriptionContaining(keyWord, keyWord);
     }
 
     @PostMapping("/books")
